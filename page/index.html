@@ -16,6 +16,7 @@
     <link rel="stylesheet" href="../fonts/mui.ttf"/>
     <link rel="stylesheet" href="../css/mui.min.css"/>
     <script type="text/javascript" src="../js/mui.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
     <style type="text/css">
         body{
             color: #333333 !important;
@@ -93,25 +94,37 @@
     <a class="mui-action-back mui-icon mui-icon-bars mui-pull-right" style="color: #fff"></a>
 </header>
 
-<div class="content" >
+<div class="content" id="app">
     <div class="mui-slider">
         <div class="mui-slider-group mui-slider-loop">
             <!--支持循环，需要重复图片节点-->
+            <div class="mui-slider-item" v-for="item in banners">
+                <a href="#">
+                    <img :src="item.img">
+                </a>
+            </div>
+
             <!--最后一张-->
-            <div class="mui-slider-item"><a href="#"><img src="https://timgsa.baidu.com/timg?image&quality=80&size=b9999_10000&sec=1556728672947&di=07f9a147f406c298ac55274d1d3f6ea8&imgtype=0&src=http%3A%2F%2Fi0.hdslb.com%2Fbfs%2Farticle%2Feabd70df86412d516645f1b564475f9758ff0c0c.jpg" /></a></div>
+            <!--<div class="mui-slider-item" v-for="item in banners">-->
+                <!--<a href="#">-->
+                    <!--<img src="https://timgsa.baidu.com/timg?image&quality=80&size=b9999_10000&sec=1556728672947&di=07f9a147f406c298ac55274d1d3f6ea8&imgtype=0&src=http%3A%2F%2Fi0.hdslb.com%2Fbfs%2Farticle%2Feabd70df86412d516645f1b564475f9758ff0c0c.jpg" />-->
+                <!--</a>-->
+            <!--</div>-->
+            <!---->
+            <!--<div class="mui-slider-item"><a href="#"><img src="https://timgsa.baidu.com/timg?image&quality=80&size=b9999_10000&sec=1556728640132&di=a2c7fa875b2ba1613b726f7d078cf808&imgtype=0&src=http%3A%2F%2Fattachments.gfan.com%2Fforum%2Fattachments2%2F201304%2F30%2F1800246wk88l4blu86dw7l.jpg" /></a></div>-->
+            <!--<div class="mui-slider-item"><a href="#"><img src="https://timgsa.baidu.com/timg?image&quality=80&size=b9999_10000&sec=1556728657153&di=8b0c13622d2dce1316e334e6ad801edc&imgtype=0&src=http%3A%2F%2Fclubimg.club.vmall.com%2Fdata%2Fattachment%2Fforum%2F201811%2F21%2F093946ruyys1j4zybqxa94.jpg" /></a></div>-->
+            <!--<div class="mui-slider-item"><a href="#"><img src="https://timgsa.baidu.com/timg?image&quality=80&size=b9999_10000&sec=1556728672947&di=07f9a147f406c298ac55274d1d3f6ea8&imgtype=0&src=http%3A%2F%2Fi0.hdslb.com%2Fbfs%2Farticle%2Feabd70df86412d516645f1b564475f9758ff0c0c.jpg" /></a></div>-->
 
-            <div class="mui-slider-item"><a href="#"><img src="https://timgsa.baidu.com/timg?image&quality=80&size=b9999_10000&sec=1556728640132&di=a2c7fa875b2ba1613b726f7d078cf808&imgtype=0&src=http%3A%2F%2Fattachments.gfan.com%2Fforum%2Fattachments2%2F201304%2F30%2F1800246wk88l4blu86dw7l.jpg" /></a></div>
-            <div class="mui-slider-item"><a href="#"><img src="https://timgsa.baidu.com/timg?image&quality=80&size=b9999_10000&sec=1556728657153&di=8b0c13622d2dce1316e334e6ad801edc&imgtype=0&src=http%3A%2F%2Fclubimg.club.vmall.com%2Fdata%2Fattachment%2Fforum%2F201811%2F21%2F093946ruyys1j4zybqxa94.jpg" /></a></div>
-            <div class="mui-slider-item"><a href="#"><img src="https://timgsa.baidu.com/timg?image&quality=80&size=b9999_10000&sec=1556728672947&di=07f9a147f406c298ac55274d1d3f6ea8&imgtype=0&src=http%3A%2F%2Fi0.hdslb.com%2Fbfs%2Farticle%2Feabd70df86412d516645f1b564475f9758ff0c0c.jpg" /></a></div>
-
-            <!--第一张-->
-            <div class="mui-slider-item"><a href="#"><img src="https://timgsa.baidu.com/timg?image&quality=80&size=b9999_10000&sec=1556728640132&di=a2c7fa875b2ba1613b726f7d078cf808&imgtype=0&src=http%3A%2F%2Fattachments.gfan.com%2Fforum%2Fattachments2%2F201304%2F30%2F1800246wk88l4blu86dw7l.jpg" /></a></div>
+            <!--&lt;!&ndash;第一张&ndash;&gt;-->
+            <!--<div class="mui-slider-item"><a href="#"><img src="https://timgsa.baidu.com/timg?image&quality=80&size=b9999_10000&sec=1556728640132&di=a2c7fa875b2ba1613b726f7d078cf808&imgtype=0&src=http%3A%2F%2Fattachments.gfan.com%2Fforum%2Fattachments2%2F201304%2F30%2F1800246wk88l4blu86dw7l.jpg" /></a></div>-->
         </div>
 
         <div class="mui-slider-indicator">
-            <div class="mui-indicator mui-active"></div>
-            <div class="mui-indicator"></div>
-            <div class="mui-indicator"></div>
+            <div :class="index==1?'mui-indicator mui-active':'mui-indicator'" v-for="index in indicator"></div>
+            <!---->
+            <!--<div class="mui-indicator mui-active"></div>-->
+            <!--<div class="mui-indicator"></div>-->
+            <!--<div class="mui-indicator"></div>-->
         </div>
     </div>
 
@@ -258,6 +271,43 @@
     </div>
 </div>
 </body>
+
+<script type="text/javascript">
+    var app = new Vue({
+        el: '#app',
+        data: function () {
+            return {
+                banners:[
+                ]
+            };
+        },
+        computed:{
+            indicator: function () {
+                return this.banners.length>0 ? this.banners.length-2:0;
+            }
+        },
+        mounted: function(){
+            // `this` 指向 vm 实例
+            console.log('a is: ' + this);
+            console.log(this);
+            this.getBanners();
+        },
+        methods: {
+            getBanners: function () {
+                console.log("----getBanners");
+                console.log(this)
+                this.banners = [
+                    {img:'https://timgsa.baidu.com/timg?image&quality=80&size=b9999_10000&sec=1556728672947&di=07f9a147f406c298ac55274d1d3f6ea8&imgtype=0&src=http%3A%2F%2Fi0.hdslb.com%2Fbfs%2Farticle%2Feabd70df86412d516645f1b564475f9758ff0c0c.jpg'},
+                    {img:'https://timgsa.baidu.com/timg?image&quality=80&size=b9999_10000&sec=1556728640132&di=a2c7fa875b2ba1613b726f7d078cf808&imgtype=0&src=http%3A%2F%2Fattachments.gfan.com%2Fforum%2Fattachments2%2F201304%2F30%2F1800246wk88l4blu86dw7l.jpg'},
+                    {img:'https://timgsa.baidu.com/timg?image&quality=80&size=b9999_10000&sec=1556728657153&di=8b0c13622d2dce1316e334e6ad801edc&imgtype=0&src=http%3A%2F%2Fclubimg.club.vmall.com%2Fdata%2Fattachment%2Fforum%2F201811%2F21%2F093946ruyys1j4zybqxa94.jpg'},
+                    {img:'https://timgsa.baidu.com/timg?image&quality=80&size=b9999_10000&sec=1556728672947&di=07f9a147f406c298ac55274d1d3f6ea8&imgtype=0&src=http%3A%2F%2Fi0.hdslb.com%2Fbfs%2Farticle%2Feabd70df86412d516645f1b564475f9758ff0c0c.jpg'},
+                    {img:'https://timgsa.baidu.com/timg?image&quality=80&size=b9999_10000&sec=1556728640132&di=a2c7fa875b2ba1613b726f7d078cf808&imgtype=0&src=http%3A%2F%2Fattachments.gfan.com%2Fforum%2Fattachments2%2F201304%2F30%2F1800246wk88l4blu86dw7l.jpg'}
+                ];
+
+            }
+        }
+    })
+</script>
 <script type="text/javascript">
     //获得slider插件对象
     var gallery = mui('.mui-slider');

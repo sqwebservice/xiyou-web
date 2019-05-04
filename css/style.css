@@ -180,7 +180,7 @@ body{
 .footer{
     width: 100%;
     position: fixed;
-    bottom: 0;
+    bottom: 50px;
     left: 0;
     right: 0;
     display: flex;
@@ -242,4 +242,46 @@ body{
     font-size: 13px;
     line-height: 25px;
     margin: 5px 0;
+}
+
+/*底部图标*/
+.sq-tabbar{
+    width: 100%;
+    height: 50px;
+    background-color: #dcdddd;
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    font-size: 13px;
+    color: #8f8f9f;
+    display: flex;
+    flex-wrap: nowrap;
+    flex-direction: row;
+    justify-content: space-evenly;
+}
+.sq-tabbar>div{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    flex: 1;
+    padding: 5px;
+    flex-wrap: nowrap;
+}
+.sq-tabbar>div:hover{
+    background-color: #8f8f94;
+    color: white;
+}
+.sq-tabbar>div:hover > a,span{
+    color: white;
+}
+.sq-tabbar>div>a{
+    font-size: 30px;
+    color: #8f8f94;
+}
+.sq-tabbar>div>span{
+    color: #8f8f94;
+}
+.sq-tabbar .active a,span{
+    color: #67b8bf;
 }
