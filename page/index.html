@@ -1,0 +1,268 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>首页</title>
+
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+    <meta http-equiv="Cache-Control" content="no-siteapp" />
+    <meta name="renderer" content="webkit">
+    <script type="text/javascript" src="https://apps.bdimg.com/libs/jquery/2.1.4/jquery.min.js"></script>
+
+    <link rel="stylesheet" href="../css/style.css"/>
+    <!--<link rel="stylesheet" href="http://cdn.amazeui.org/amazeui/2.7.2/css/amazeui.css"/>-->
+    <!--<script type="text/javascript" src="http://cdn.amazeui.org/amazeui/2.7.2/js/amazeui.js"></script>-->
+
+    <link rel="stylesheet" href="../fonts/mui.ttf"/>
+    <link rel="stylesheet" href="../css/mui.min.css"/>
+    <script type="text/javascript" src="../js/mui.min.js"></script>
+    <style type="text/css">
+        body{
+            color: #333333 !important;
+            font-size: 16px;
+            background: white;
+        }
+        li{
+            list-style: none;
+        }
+        .content{
+            width: 100%;
+            height: auto;
+            margin-top: 44px;
+            margin-bottom: 30px;
+        }
+
+        /*mui-slider-indicator*/
+        .mui-slider-indicator .mui-active{
+            background-color: #61b8be !important;
+            color: #61b8be;
+        }
+
+
+
+        /*message资讯*/
+        #message .panel-content li{
+            position: relative;
+            padding-left: 12px;
+        }
+        #message .panel-content li:before{
+            content: '';
+            width:0;
+            height:0;
+            border-width:8px 0 6px 8px;
+            border-style:solid;
+            border-color:transparent transparent transparent #61b8be;/*透明 透明 透明 灰*/
+            position:absolute;
+            top: 5px;
+            left: 0;
+            bottom: 0;
+        }
+
+        /*teacher导师*/
+        #teacher .list-item{
+            padding: 5px 5px;
+            text-align: center;
+            font-size: 11px;
+        }
+        #teacher .list-item img{
+            width: 100%;
+            display: block;
+        }
+        #teacher .jobtitle{
+            width: 100%;
+            position: relative;
+            display: block;
+            text-align: center;
+            font-size: 11px;
+            color: #333333;
+            padding: 0;
+            margin: 0;
+        }
+
+        /*coursequan全部课程*/
+        #course{
+            margin-top: 10px;
+        }
+
+
+    </style>
+</head>
+<body>
+<header class="mui-bar mui-bar-nav" style="background-color: #67b8bf;color: #fff;">
+    <h1 class="mui-title" style="color: #fff;text-align: left;">西游教育</h1>
+    <a class="mui-action-back mui-icon mui-icon-bars mui-pull-right" style="color: #fff"></a>
+</header>
+
+<div class="content" >
+    <div class="mui-slider">
+        <div class="mui-slider-group mui-slider-loop">
+            <!--支持循环，需要重复图片节点-->
+            <!--最后一张-->
+            <div class="mui-slider-item"><a href="#"><img src="https://timgsa.baidu.com/timg?image&quality=80&size=b9999_10000&sec=1556728672947&di=07f9a147f406c298ac55274d1d3f6ea8&imgtype=0&src=http%3A%2F%2Fi0.hdslb.com%2Fbfs%2Farticle%2Feabd70df86412d516645f1b564475f9758ff0c0c.jpg" /></a></div>
+
+            <div class="mui-slider-item"><a href="#"><img src="https://timgsa.baidu.com/timg?image&quality=80&size=b9999_10000&sec=1556728640132&di=a2c7fa875b2ba1613b726f7d078cf808&imgtype=0&src=http%3A%2F%2Fattachments.gfan.com%2Fforum%2Fattachments2%2F201304%2F30%2F1800246wk88l4blu86dw7l.jpg" /></a></div>
+            <div class="mui-slider-item"><a href="#"><img src="https://timgsa.baidu.com/timg?image&quality=80&size=b9999_10000&sec=1556728657153&di=8b0c13622d2dce1316e334e6ad801edc&imgtype=0&src=http%3A%2F%2Fclubimg.club.vmall.com%2Fdata%2Fattachment%2Fforum%2F201811%2F21%2F093946ruyys1j4zybqxa94.jpg" /></a></div>
+            <div class="mui-slider-item"><a href="#"><img src="https://timgsa.baidu.com/timg?image&quality=80&size=b9999_10000&sec=1556728672947&di=07f9a147f406c298ac55274d1d3f6ea8&imgtype=0&src=http%3A%2F%2Fi0.hdslb.com%2Fbfs%2Farticle%2Feabd70df86412d516645f1b564475f9758ff0c0c.jpg" /></a></div>
+
+            <!--第一张-->
+            <div class="mui-slider-item"><a href="#"><img src="https://timgsa.baidu.com/timg?image&quality=80&size=b9999_10000&sec=1556728640132&di=a2c7fa875b2ba1613b726f7d078cf808&imgtype=0&src=http%3A%2F%2Fattachments.gfan.com%2Fforum%2Fattachments2%2F201304%2F30%2F1800246wk88l4blu86dw7l.jpg" /></a></div>
+        </div>
+
+        <div class="mui-slider-indicator">
+            <div class="mui-indicator mui-active"></div>
+            <div class="mui-indicator"></div>
+            <div class="mui-indicator"></div>
+        </div>
+    </div>
+
+    <div style="height: 20px"></div>
+    <!-咨询热点-->
+    <div id="message" class="panel">
+        <div>
+            <div class="panel-title">咨询热点
+                <div class="line"></div>
+                <a href="#">更多</a>
+            </div>
+        </div>
+        <div class="panel-content">
+            <ul>
+                <li>Marking Analytics 专业，理工科和商科的完美结合</li>
+                <li>想学BA？Business Analytics和Business Analytics分满了吗?</li>
+                <li>面试专题|What`s your Weakness?</li>
+            </ul>
+        </div>
+    </div>
+    <!--导师团队-->
+    <div id="teacher" class="panel">
+        <div>
+            <div class="panel-title">导师团队
+                <div class="line"></div>
+                <a href="#">更多</a>
+            </div>
+        </div>
+        <div class="panel-content">
+            <div class="mui-row">
+                <div class="mui-col-sm-3 mui-col-xs-6 list-item">
+                    <img src="https://timgsa.baidu.com/timg?image&quality=80&size=b9999_10000&sec=1556718275056&di=7c9f2516ce0f341cb28291d46ab129f7&imgtype=0&src=http%3A%2F%2Fimage-258.258.com%2F258com%2F20171111%2Fdd6b7f47fa6e430b5440121fa75e491a.jpg">
+                    <div class="name">Sophia</div>
+                </div>
+                <div class="mui-col-sm-3 mui-col-xs-6 list-item">
+                    <img src="https://timgsa.baidu.com/timg?image&quality=80&size=b9999_10000&sec=1556718275056&di=7c9f2516ce0f341cb28291d46ab129f7&imgtype=0&src=http%3A%2F%2Fimage-258.258.com%2F258com%2F20171111%2Fdd6b7f47fa6e430b5440121fa75e491a.jpg">
+                    <div class="name">Sophia</div>
+                </div>
+                <div class="mui-col-sm-3 mui-col-xs-6 list-item">
+                    <img src="https://timgsa.baidu.com/timg?image&quality=80&size=b9999_10000&sec=1556718275056&di=7c9f2516ce0f341cb28291d46ab129f7&imgtype=0&src=http%3A%2F%2Fimage-258.258.com%2F258com%2F20171111%2Fdd6b7f47fa6e430b5440121fa75e491a.jpg">
+                    <div class="name">Sophia</div>
+                </div>
+                <div class="mui-col-sm-3 mui-col-xs-6 list-item">
+                    <img src="https://timgsa.baidu.com/timg?image&quality=80&size=b9999_10000&sec=1556718275056&di=7c9f2516ce0f341cb28291d46ab129f7&imgtype=0&src=http%3A%2F%2Fimage-258.258.com%2F258com%2F20171111%2Fdd6b7f47fa6e430b5440121fa75e491a.jpg">
+                    <div class="name">Sophia</div>
+                </div>
+            </div>
+            <div class="jobtitle divider"><span>职业规划师</span></div>
+
+            <div class="mui-row" style="margin-top: 15px">
+                <div class="mui-col-sm-3 mui-col-xs-6 list-item">
+                    <img src="https://timgsa.baidu.com/timg?image&quality=80&size=b9999_10000&sec=1556718275056&di=7c9f2516ce0f341cb28291d46ab129f7&imgtype=0&src=http%3A%2F%2Fimage-258.258.com%2F258com%2F20171111%2Fdd6b7f47fa6e430b5440121fa75e491a.jpg">
+                    <div class="name">Sophia</div>
+                </div>
+                <div class="mui-col-sm-3 mui-col-xs-6 list-item">
+                    <img src="https://timgsa.baidu.com/timg?image&quality=80&size=b9999_10000&sec=1556718275056&di=7c9f2516ce0f341cb28291d46ab129f7&imgtype=0&src=http%3A%2F%2Fimage-258.258.com%2F258com%2F20171111%2Fdd6b7f47fa6e430b5440121fa75e491a.jpg">
+                    <div class="name">Sophia</div>
+                </div>
+                <div class="mui-col-sm-3 mui-col-xs-6 list-item">
+                    <img src="https://timgsa.baidu.com/timg?image&quality=80&size=b9999_10000&sec=1556718275056&di=7c9f2516ce0f341cb28291d46ab129f7&imgtype=0&src=http%3A%2F%2Fimage-258.258.com%2F258com%2F20171111%2Fdd6b7f47fa6e430b5440121fa75e491a.jpg">
+                    <div class="name">Sophia</div>
+                </div>
+                <div class="mui-col-sm-3 mui-col-xs-6 list-item">
+                    <img src="https://timgsa.baidu.com/timg?image&quality=80&size=b9999_10000&sec=1556718275056&di=7c9f2516ce0f341cb28291d46ab129f7&imgtype=0&src=http%3A%2F%2Fimage-258.258.com%2F258com%2F20171111%2Fdd6b7f47fa6e430b5440121fa75e491a.jpg">
+                    <div class="name">Sophia</div>
+                </div>
+            </div>
+            <div class="jobtitle divider"><span>资讯行业导师</span></div>
+        </div>
+    </div>
+
+    <!--导师团队-->
+    <div id="course" class="panel cover">
+        <div>
+            <div class="panel-title">全部课程
+                <div class="line"></div>
+                <a href="#">更多</a>
+            </div>
+        </div>
+        <div class="panel-content">
+            <div class="mui-row">
+                <div class="mui-col-sm-6 mui-col-xs-12 cover-item">
+                    <div class="image">
+                        <img class="img" src="https://timgsa.baidu.com/timg?image&quality=80&size=b9999_10000&sec=1556733432157&di=1b49ca8afb8c3bab5b0818bec3eaa949&imgtype=0&src=http%3A%2F%2Fs12.sinaimg.cn%2Fmw690%2F001okAbYzy7swVjjIrVeb%26690">
+                        <img class="play" src="../images/play-small-new_1daa417.png">
+                    </div>
+                    <div class="details left">
+                        <div class="title">推荐算法应用基础讲解</div>
+                        <div class="teacher">导师：XX公司资深高级数据科学家Haven</div>
+                        <div class="info">以下是这些视频的一些详细介绍，可能内容会比较长，但是我们可以做</div>
+                    </div>
+                    <div class="right">
+                        <div class="numbers"><a class="mui-icon mui-icon-person"></a>10000人看过</div>
+                        <div class="button">免费试看</div>
+                    </div>
+                </div>
+                <div class="mui-col-sm-6 mui-col-xs-12 cover-item">
+                    <div class="image">
+                        <img class="img" src="https://timgsa.baidu.com/timg?image&quality=80&size=b9999_10000&sec=1556733432157&di=1b49ca8afb8c3bab5b0818bec3eaa949&imgtype=0&src=http%3A%2F%2Fs12.sinaimg.cn%2Fmw690%2F001okAbYzy7swVjjIrVeb%26690">
+                        <img class="play" src="../images/play-small-new_1daa417.png">
+                    </div>
+                    <div class="details left">
+                        <div class="title">推荐算法应用基础讲解</div>
+                        <div class="teacher">导师：XX公司资深高级数据科学家Haven</div>
+                        <div class="info">以下是这些视频的一些详细介绍，可能内容会比较长，但是我们可以做</div>
+                    </div>
+                    <div class="right">
+                        <div class="numbers"><a class="mui-icon mui-icon-person"></a>10000人看过</div>
+                        <div class="button">免费试看</div>
+                    </div>
+                </div>
+                <div class="mui-col-sm-6 mui-col-xs-12 cover-item">
+                    <div class="image">
+                        <img class="img" src="https://timgsa.baidu.com/timg?image&quality=80&size=b9999_10000&sec=1556733432157&di=1b49ca8afb8c3bab5b0818bec3eaa949&imgtype=0&src=http%3A%2F%2Fs12.sinaimg.cn%2Fmw690%2F001okAbYzy7swVjjIrVeb%26690">
+                        <img class="play" src="../images/play-small-new_1daa417.png">
+                    </div>
+                    <div class="details left">
+                        <div class="title">推荐算法应用基础讲解</div>
+                        <div class="teacher">导师：XX公司资深高级数据科学家Haven</div>
+                        <div class="info">以下是这些视频的一些详细介绍，可能内容会比较长，但是我们可以做</div>
+                    </div>
+                    <div class="right">
+                        <div class="numbers"><a class="mui-icon mui-icon-person"></a>10000人看过</div>
+                        <div class="button">免费试看</div>
+                    </div>
+                </div>
+                <div class="mui-col-sm-6 mui-col-xs-12 cover-item">
+                    <div class="image">
+                        <img class="img" src="https://timgsa.baidu.com/timg?image&quality=80&size=b9999_10000&sec=1556733432157&di=1b49ca8afb8c3bab5b0818bec3eaa949&imgtype=0&src=http%3A%2F%2Fs12.sinaimg.cn%2Fmw690%2F001okAbYzy7swVjjIrVeb%26690">
+                        <img class="play" src="../images/play-small-new_1daa417.png">
+                    </div>
+                    <div class="details left">
+                        <div class="title">推荐算法应用基础讲解</div>
+                        <div class="teacher">导师：XX公司资深高级数据科学家Haven</div>
+                        <div class="info">以下是这些视频的一些详细介绍，可能内容会比较长，但是我们可以做</div>
+                    </div>
+                    <div class="right">
+                        <div class="numbers"><a class="mui-icon mui-icon-person"></a>10000人看过</div>
+                        <div class="button">免费试看</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+</body>
+<script type="text/javascript">
+    //获得slider插件对象
+    var gallery = mui('.mui-slider');
+    gallery.slider({
+        interval:3000//自动轮播周期，若为0则不自动播放，默认为0；
+    });
+</script>
+</html>

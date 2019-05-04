@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>成绩报告</title>
+
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+    <meta http-equiv="Cache-Control" content="no-siteapp" />
+    <meta name="renderer" content="webkit">
+    <script type="text/javascript" src="https://apps.bdimg.com/libs/jquery/2.1.4/jquery.min.js"></script>
+
+    <link rel="stylesheet" href="../css/style.css"/>
+    <!--<link rel="stylesheet" href="http://cdn.amazeui.org/amazeui/2.7.2/css/amazeui.css"/>-->
+    <!--<script type="text/javascript" src="http://cdn.amazeui.org/amazeui/2.7.2/js/amazeui.js"></script>-->
+
+    <link rel="stylesheet" href="../fonts/mui.ttf"/>
+    <link rel="stylesheet" href="../css/mui.min.css"/>
+    <script type="text/javascript" src="../js/mui.min.js"></script>
+
+    <style type="text/css">
+        body{
+            color: #333333 !important;
+            font-size: 16px;
+            background: #fff;
+        }
+        li{
+            list-style: none;
+        }
+        .content{
+            width: 100%;
+            height: auto;
+            margin-top: 64px;
+            margin-bottom: 30px;
+        }
+
+        .panel{
+            margin-top: 10px;
+            background: #fff;
+        }
+        .panel .panel-title{
+            padding-left: 10px;
+        }
+        .panel .panel-content{
+            line-height: 25px;
+        }
+        .panel .panel-title:before {
+            content: '';
+            width: 0;
+            height: 0;
+            border-width: 6px 0 6px 6px;
+            border-style: solid;
+            border-color: transparent transparent transparent #61b8be;
+            position: absolute;
+            top: 4px;
+            left: 0;
+            bottom: 0;
+        }
+
+        /*整体分析*/
+        #analyze li{
+            position: relative;
+            padding-left: 15px;
+            margin: 6px 0;
+        }
+        #analyze li:before{
+            content: '';
+            position: absolute;
+            width: 10px;
+            height: 10px;
+            left: 0;
+            top: 7px;
+            background-color: #61b8be;
+            border-radius: 50%;
+        }
+        #analyze .model{
+            font-size: 30px;
+            color: red;
+            font-family: "Times New Roman";
+            letter-spacing: 0px;
+            margin-right: 2px;
+        }
+        #analyze .L2 span{
+            margin: 0 3px;
+            color: red;
+        }
+
+        /*建议*/
+        #offer{
+        }
+        #offer .panel-content{
+            padding-left: 10px;
+        }
+    </style>
+</head>
+<body>
+<header class="mui-bar mui-bar-nav" style="background-color: #67b8bf;color: #fff;">
+    <a class="mui-action-back mui-icon mui-icon-back mui-pull-left" style="color: #fff"></a>
+    <h1 class="mui-title" style="color: #fff;">成绩报告</h1>
+    <a class="mui-action-back mui-icon mui-icon-bars mui-pull-right" style="color: #fff"></a>
+</header>
+
+<div class="content">
+    <div id="analyze" class="panel">
+        <div>
+            <div class="panel-title">考试整体分析
+                <div class="line"></div>
+            </div>
+        </div>
+        <div class="panel-content">
+            <ul>
+                <li><span class="model">ISTJ</span>型人格</li>
+                <li class="L2">关键词：<span>严肃</span><span>务实</span><span>逻辑</span></li>
+                <li>整体分析: 1.严肃、安静、籍由集中心志与全力投入,及可被信赖快致成功: 2.行事务实，有序、实际，建辑、真实及可信赖: 3.+分国童且乐于任何事(工作、因家、生活均有良好组织及有序):4.负责任: 5.照设定成效来作出决策目不要阻挠与闲言会坚定为‘之: 6.重视传统与忠诚: 7.传统性的思考者或经理。</li>
+            </ul>
+        </div>
+    </div>
+
+    <div id="chart" class="panel">
+        <div>
+            <div class="panel-title">职业性格趋向表
+                <div class="line"></div>
+            </div>
+        </div>
+        <div class="panel-content">
+            <img style="width: 100%;height: auto" src="https://ss3.bdstatic.com/70cFv8Sh_Q1YnxGkpoWK1HF6hhy/it/u=1967947286,3442057709&fm=26&gp=0.jpg">
+        </div>
+    </div>
+
+    <div id="offer" class="panel">
+        <div>
+            <div class="panel-title">导师规划建议
+                <div class="line"></div>
+            </div>
+        </div>
+        <div class="panel-content">
+            你品行优良，待人试思，表理-数。宽厚仁道，不激进，与人争锋，同学乐意亲近。本学期最突出的成果是学习逐步走向正轨，退渐掌握了高中课程的学习方法。你现在一定要树立信心,没有意不过的高山，没有越不过的大海，只要陶怀坚定，坚强果败，乘风破浪会有时。你性格活泼开朗，能说能干，为人大方。宽厚仁道，不激进，不与人争锋，同学乐意亲近。成绩有所回开，但远没有达到你的潜质。不用去想能攀多高，即使路途遥远，只要一步一个脚印，目标始终如一,你的理想一定能实现。
+        </div>
+    </div>
+
+</div>
+</body>
+<script type="text/javascript">
+
+</script>
+</html>

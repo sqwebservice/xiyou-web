@@ -1,0 +1,247 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>导师团队</title>
+
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+    <meta http-equiv="Cache-Control" content="no-siteapp" />
+    <meta name="renderer" content="webkit">
+    <script type="text/javascript" src="https://apps.bdimg.com/libs/jquery/2.1.4/jquery.min.js"></script>
+
+    <link rel="stylesheet" href="../css/style.css"/>
+    <!--<link rel="stylesheet" href="http://cdn.amazeui.org/amazeui/2.7.2/css/amazeui.css"/>-->
+    <!--<script type="text/javascript" src="http://cdn.amazeui.org/amazeui/2.7.2/js/amazeui.js"></script>-->
+
+    <link rel="stylesheet" href="../fonts/mui.ttf"/>
+    <link rel="stylesheet" href="../css/mui.min.css"/>
+    <script type="text/javascript" src="../js/mui.min.js"></script>
+
+    <style type="text/css">
+        body{
+            color: #333333 !important;
+            font-size: 16px;
+            background: white;
+        }
+        li{
+            list-style: none;
+        }
+        .content{
+            width: 100%;
+            height: auto;
+            margin-top: 44px;
+            margin-bottom: 30px;
+        }
+
+        /*tab-bar*/
+        .sq-tab-bar{
+            background-color: #dcdddd;
+        }
+        .sq-tab-bar .mui-scroll{
+            background-color: #dcdddd;
+        }
+        .sq-tab-bar .mui-control-item{
+            position: relative;
+        }
+        .sq-tab-bar .mui-active{
+            color: #419ca3 !important;
+            position: relative;
+        }
+        .sq-tab-bar .mui-active:after{
+            content: '';
+            width:0;
+            height:0;
+            border-width:0 5px 5px;
+            border-style:solid;
+            border-color:transparent transparent #67b8bf;/*透明 透明  灰*/
+            position:absolute;
+            bottom: 3px;
+            left: 45%;
+        }
+        .sq-tab-bar .mui-active:before{
+            content: '';
+            width:auto;
+            height:3px;
+            background-color:  #67b8bf;/*透明 透明  灰*/
+            position:absolute;
+            bottom: 0;
+            right: 20px;
+            left: 20px;
+            border-radius: 5px;
+        }
+
+        #refreshContainer{
+            margin-top: 82px;
+        }
+
+        /*card*/
+        .sq-card{
+            width: 100%;
+        }
+        .sq-card img{
+            width: 100%;
+            height: auto;
+            display: block;
+        }
+        .sq-card .info{
+            width: 100%;
+            height: auto;
+            margin: 0;
+            padding: 0;
+            background-color: #35aeb0;
+            color: white;
+            font-size: 13px;
+            text-align: center;
+            position: relative;
+        }
+        .sq-card .info-name{
+            width: 100%;
+            position: relative;
+            padding: 10px;
+        }
+        .sq-card .info .name{
+            width: auto;
+            font-size: 1.3em;
+            position: relative;
+            display: inline;
+        }
+        .sq-card .name .tag{
+            font-size: 100px;
+            font-family: "Arial Narrow";
+            position: absolute;
+            top: 17px;
+            bottom: 0;
+            left: -16px;
+            display: inline;
+        }
+        .sq-card .info-name .line{
+            width: calc(50% + 10px);
+            display: block;
+            height: 1px;
+            background-color: #f0f0f0;
+            position: relative;
+            top: 0;
+            left: calc(50%);
+            right: 0px;
+            bottom: 0px;
+        }
+        .sq-card .info .titles{
+            font-size: 7px;
+        }
+        .sq-card .info .more{
+            font-size: 7px;
+            padding: 5px;
+        }
+
+        .mui-row .sq-card{
+            padding: 10px;
+        }
+    </style>
+</head>
+<body>
+<header class="mui-bar mui-bar-nav" style="background-color: #67b8bf;color: #fff;">
+    <a class="mui-action-back mui-icon mui-icon-back mui-pull-left" style="color: #fff"></a>
+    <h1 class="mui-title" style="color: #fff;">导师团队</h1>
+    <a class="mui-action-back mui-icon mui-icon-bars mui-pull-right" style="color: #fff"></a>
+</header>
+
+<div class="content" >
+    <div class="sq-tab-bar">
+        <div class="mui-segmented-control mui-segmented-control-inverted mui-segmented-control-negative mui-scroll-wrapper mui-slider-indicator">
+            <div class="mui-scroll">
+                <a href="#m1" class="mui-control-item mui-active">职业规划师</a>
+                <a href="#m2" class="mui-control-item ">咨询行业</a>
+                <a href="#m3" class="mui-control-item">金融行业</a>
+                <a href="#m4" class="mui-control-item">计算机行业</a>
+                <a href="#m5" class="mui-control-item ">大数据行业</a>
+                <a href="#m6" class="mui-control-item">快测行业</a>
+            </div>
+        </div>
+    </div>
+    <!--下拉刷新容器-->
+    <div id="refreshContainer" class="mui-content mui-scroll-wrapper">
+        <div class="mui-scroll">
+            <!--数据列表-->
+            <ul class="mui-table-view mui-table-view-chevron">
+                <div class="mui-row">
+                    <div class="mui-col-sm-6 mui-col-xs-6">
+                        <div class="sq-card">
+                            <img src="https://timgsa.baidu.com/timg?image&quality=80&size=b9999_10000&sec=1556718275056&di=7c9f2516ce0f341cb28291d46ab129f7&imgtype=0&src=http%3A%2F%2Fimage-258.258.com%2F258com%2F20171111%2Fdd6b7f47fa6e430b5440121fa75e491a.jpg">
+                            <div class="info">
+                                <div class="info-name">
+                                    <div class="name"><span class="tag">‘</span>Sophia.Lin</div>
+                                    <div class="line"></div>
+                                    <span class="titles">SeeU 职业规划师</span>
+                                </div>
+                                <div class="more">
+                                    <div>介绍介绍介绍</div>
+                                    <div>介绍介绍介绍介绍介绍</div>
+                                    <div>介绍介绍介绍介绍介绍</div>
+                                    <div>介绍介绍介绍介绍介绍介绍介绍介绍</div>
+                                </div>
+                            </div>
+                            <div class="sq-button" style="margin-top: 10px;width: 60%;margin-right: auto;margin-left: auto">查看详情</div>
+                        </div>
+                    </div>
+                    <div class="mui-col-sm-6 mui-col-xs-6">
+                        <div class="sq-card">
+                            <img src="https://timgsa.baidu.com/timg?image&quality=80&size=b9999_10000&sec=1556718275056&di=7c9f2516ce0f341cb28291d46ab129f7&imgtype=0&src=http%3A%2F%2Fimage-258.258.com%2F258com%2F20171111%2Fdd6b7f47fa6e430b5440121fa75e491a.jpg">
+                            <div class="info">
+                                <div class="info-name">
+                                    <div class="name"><span class="tag">‘</span>Sophia.Lin</div>
+                                    <div class="line"></div>
+                                    <span class="titles">SeeU 职业规划师</span>
+                                </div>
+                                <div class="more">
+                                    <div>介绍介绍介绍</div>
+                                    <div>介绍介绍介绍介绍介绍</div>
+                                    <div>介绍介绍介绍介绍介绍</div>
+                                    <div>介绍介绍介绍介绍介绍介绍介绍介绍</div>
+                                </div>
+                            </div>
+                            <div class="sq-button" style="margin-top: 10px;width: 60%;margin-right: auto;margin-left: auto">查看详情</div>
+                        </div>
+                    </div>
+                    <div class="mui-col-sm-6 mui-col-xs-6">
+                        <div class="sq-card">
+                            <img src="https://timgsa.baidu.com/timg?image&quality=80&size=b9999_10000&sec=1556718275056&di=7c9f2516ce0f341cb28291d46ab129f7&imgtype=0&src=http%3A%2F%2Fimage-258.258.com%2F258com%2F20171111%2Fdd6b7f47fa6e430b5440121fa75e491a.jpg">
+                            <div class="info">
+                                <div class="info-name">
+                                    <div class="name"><span class="tag">‘</span>Sophia.Lin</div>
+                                    <div class="line"></div>
+                                    <span class="titles">SeeU 职业规划师</span>
+                                </div>
+                                <div class="more">
+                                    <div>介绍介绍介绍</div>
+                                    <div>介绍介绍介绍介绍介绍</div>
+                                    <div>介绍介绍介绍介绍介绍</div>
+                                    <div>介绍介绍介绍介绍介绍介绍介绍介绍</div>
+                                </div>
+                            </div>
+                            <div class="sq-button" style="margin-top: 10px;width: 60%;margin-right: auto;margin-left: auto">查看详情</div>
+                        </div>
+                    </div>
+                </div>
+            </ul>
+        </div>
+    </div>
+</div>
+</body>
+<script type="text/javascript">
+    mui.init({
+        pullRefresh : {
+            container:"#refreshContainer",//下拉刷新容器标识，querySelector能定位的css选择器均可，比如：id、.class等
+            down : {
+                height:50,//可选,默认50.触发下拉刷新拖动距离,
+                auto: false,//可选,默认false.首次加载自动下拉刷新一次
+                contentdown : "下拉可以刷新",//可选，在下拉可刷新状态时，下拉刷新控件上显示的标题内容
+                contentover : "释放立即刷新",//可选，在释放可刷新状态时，下拉刷新控件上显示的标题内容
+                contentrefresh : "正在刷新...",//可选，正在刷新状态时，下拉刷新控件上显示的标题内容
+                callback : function () {
+
+                } //必选，刷新函数，根据具体业务来编写，比如通过ajax从服务器获取新数据；
+            }
+        }
+    });
+</script>
+</html>

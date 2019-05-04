@@ -1,0 +1,187 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>MBTI测试</title>
+
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+    <meta http-equiv="Cache-Control" content="no-siteapp" />
+    <meta name="renderer" content="webkit">
+    <script type="text/javascript" src="https://apps.bdimg.com/libs/jquery/2.1.4/jquery.min.js"></script>
+
+    <link rel="stylesheet" href="../css/style.css"/>
+    <!--<link rel="stylesheet" href="http://cdn.amazeui.org/amazeui/2.7.2/css/amazeui.css"/>-->
+    <!--<script type="text/javascript" src="http://cdn.amazeui.org/amazeui/2.7.2/js/amazeui.js"></script>-->
+
+    <link rel="stylesheet" href="../fonts/mui.ttf"/>
+    <link rel="stylesheet" href="../css/mui.min.css"/>
+    <script type="text/javascript" src="../js/mui.min.js"></script>
+
+    <style type="text/css">
+        body{
+            color: #333333 !important;
+            font-size: 16px;
+        }
+        li{
+            list-style: none;
+        }
+        .content{
+            width: 100%;
+            height: auto;
+            margin-top: 44px;
+            margin-bottom: 30px;
+        }
+
+        /*li*/
+        .content>ul li{
+            font-size: 13px;
+            position: relative;
+        }
+        .content>ul li .title{
+            background-color: #dcdddd;
+            padding: 10px 20px;
+            position: relative;
+            padding-left: 30px;
+        }
+        .content>ul li .title:before{
+            content: "";
+            display: block;
+            width: 4px;
+            height: 50%;
+            background: #67b8bf;
+            position: absolute;
+            left: 20px;
+            top:25%;
+            border-radius: 8px;
+        }
+        .content>ul li .options{
+            padding: 10px 20px;
+        }
+        .content>ul li .options li{
+            margin: 5px 0;
+        }
+
+    </style>
+</head>
+<body>
+<header class="mui-bar mui-bar-nav" style="background-color: #67b8bf;color: #fff;">
+    <a class="mui-action-back mui-icon mui-icon-back mui-pull-left" style="color: #fff"></a>
+    <h1 class="mui-title" style="color: #fff;">MBTI测试</h1>
+    <a class="mui-action-back mui-icon mui-icon-bars mui-pull-right" style="color: #fff"></a>
+</header>
+
+<div class="content" >
+    <ul>
+        <li>
+            <div class="title">1.你偏好_____________?</div>
+            <div class="options">
+                <ul>
+                    <li>
+                        <label class="sq-radio">
+                            A.事先知道约会的行程，要去哪里、有谁参加、你会在那里多久、该如何打扮
+                            <input type="radio" name="q1">
+                            <i></i>
+                        </label>
+                    </li>
+                    <li>
+                        <label class="sq-radio">
+                            B.让约会自然地去发生，不做太多的事先的计划
+                            <input type="radio" name="q1">
+                            <i></i>
+                        </label>
+                    </li>
+                </ul>
+            </div>
+        </li>
+        <li>
+            <div class="title">2.你喜欢_____________?</div>
+            <div class="options">
+                <ul>
+                    <li>
+                        <label class="sq-radio">
+                            A.有部署、有节奏的工作
+                            <input type="radio" name="q2">
+                            <i></i>
+                        </label>
+                    </li>
+                    <li>
+                        <label class="sq-radio">
+                            B.有灵活性、较为松散的工作
+                            <input type="radio" name="q2">
+                            <i></i>
+                        </label>
+                    </li>
+                </ul>
+            </div>
+        </li>
+        <li>
+            <div class="title">3.你乐于拥有广泛的人际圈?</div>
+            <div class="options">
+                <ul>
+                    <li>
+                        <label class="sq-radio">
+                            A.是的
+                            <input type="radio" name="q3">
+                            <i></i>
+                        </label>
+                    </li>
+                    <li>
+                        <label class="sq-radio">
+                            B.如果可以选择的话，我更愿意一个人静静呆着
+                            <input type="radio" name="q3">
+                            <i></i>
+                        </label>
+                    </li>
+                </ul>
+            </div>
+        </li>
+        <li>
+            <div class="title">4.你看肥皂剧的时候会很投入?</div>
+            <div class="options">
+                <ul>
+                    <li>
+                        <label class="sq-radio">
+                            A.是的
+                            <input type="radio" name="q4">
+                            <i></i>
+                        </label>
+                    </li>
+                    <li>
+                        <label class="sq-radio">
+                            B.不会
+                            <input type="radio" name="q4">
+                            <i></i>
+                        </label>
+                    </li>
+                </ul>
+            </div>
+        </li>
+        <li>
+            <div class="title">5.电话铃声突然响起或类似这样的突发性事件，你习惯最先做出回应?</div>
+            <div class="options">
+                <ul>
+                    <li>
+                        <label class="sq-radio">
+                            A.是的
+                            <input type="radio" name="q5">
+                            <i></i>
+                        </label>
+                    </li>
+                    <li>
+                        <label class="sq-radio">
+                            B.不会
+                            <input type="radio" name="q5">
+                            <i></i>
+                        </label>
+                    </li>
+                </ul>
+            </div>
+        </li>
+    </ul>
+
+    <div style="width: 70%;margin-top: 50px;margin-left: auto;margin-right: auto;">
+        <button class="sq-button">下一页</button>
+    </div>
+</div>
+</body>
+</html>

@@ -1,0 +1,236 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>全部课程</title>
+
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+    <meta http-equiv="Cache-Control" content="no-siteapp" />
+    <meta name="renderer" content="webkit">
+    <script type="text/javascript" src="https://apps.bdimg.com/libs/jquery/2.1.4/jquery.min.js"></script>
+
+    <link rel="stylesheet" href="../css/style.css"/>
+    <!--<link rel="stylesheet" href="http://cdn.amazeui.org/amazeui/2.7.2/css/amazeui.css"/>-->
+    <!--<script type="text/javascript" src="http://cdn.amazeui.org/amazeui/2.7.2/js/amazeui.js"></script>-->
+
+    <link rel="stylesheet" href="../fonts/mui.ttf"/>
+    <link rel="stylesheet" href="../css/mui.min.css"/>
+    <script type="text/javascript" src="../js/mui.min.js"></script>
+
+    <style type="text/css">
+        body{
+            color: #333333 !important;
+            font-size: 16px;
+            background: white;
+        }
+        li{
+            list-style: none;
+        }
+        .content{
+            width: 100%;
+            height: auto;
+            margin-top: 44px;
+            margin-bottom: 30px;
+        }
+
+        /*tab-bar*/
+        .sq-tab-bar{
+            background-color: #dcdddd;
+        }
+        .sq-tab-bar .mui-scroll{
+            background-color: #dcdddd;
+        }
+        .sq-tab-bar .mui-control-item{
+            position: relative;
+        }
+        .sq-tab-bar .mui-active{
+            color: #419ca3 !important;
+            position: relative;
+        }
+        .sq-tab-bar .mui-active:after{
+            content: '';
+            width:0;
+            height:0;
+            border-width:0 5px 5px;
+            border-style:solid;
+            border-color:transparent transparent #67b8bf;/*透明 透明  灰*/
+            position:absolute;
+            bottom: 3px;
+            left: 45%;
+        }
+        .sq-tab-bar .mui-active:before{
+            content: '';
+            width:auto;
+            height:3px;
+            background-color:  #67b8bf;/*透明 透明  灰*/
+            position:absolute;
+            bottom: 0;
+            right: 20px;
+            left: 20px;
+            border-radius: 5px;
+        }
+
+        #refreshContainer{
+            margin-top: 82px;
+        }
+
+        /*card*/
+        .sq-card{
+            width: 100%;
+        }
+        .sq-card img{
+            width: 100%;
+            height: auto;
+            display: block;
+        }
+        .sq-card .info{
+            width: 100%;
+            height: auto;
+            margin: 0;
+            padding: 0;
+            background-color: #35aeb0;
+            color: white;
+            font-size: 13px;
+            text-align: center;
+            position: relative;
+        }
+        .sq-card .info-name{
+            width: 100%;
+            position: relative;
+            padding: 10px;
+        }
+        .sq-card .info .name{
+            width: auto;
+            font-size: 1.3em;
+            position: relative;
+            display: inline;
+        }
+        .sq-card .name .tag{
+            font-size: 100px;
+            font-family: "Arial Narrow";
+            position: absolute;
+            top: 17px;
+            bottom: 0;
+            left: -16px;
+            display: inline;
+        }
+        .sq-card .info-name .line{
+            width: calc(50% + 10px);
+            display: block;
+            height: 1px;
+            background-color: #f0f0f0;
+            position: relative;
+            top: 0;
+            left: calc(50%);
+            right: 0px;
+            bottom: 0px;
+        }
+        .sq-card .info .titles{
+            font-size: 7px;
+        }
+        .sq-card .info .more{
+            font-size: 7px;
+            padding: 5px;
+        }
+
+        .mui-row .sq-card{
+            padding: 10px;
+        }
+    </style>
+</head>
+<body>
+<header class="mui-bar mui-bar-nav" style="background-color: #67b8bf;color: #fff;">
+    <a class="mui-action-back mui-icon mui-icon-back mui-pull-left" style="color: #fff"></a>
+    <h1 class="mui-title" style="color: #fff;">全部课程</h1>
+    <a class="mui-action-back mui-icon mui-icon-bars mui-pull-right" style="color: #fff"></a>
+</header>
+
+<div class="content" >
+    <div class="sq-tab-bar">
+        <div class="mui-segmented-control mui-segmented-control-inverted mui-segmented-control-negative mui-scroll-wrapper mui-slider-indicator">
+            <div class="mui-scroll">
+                <a href="#m1" class="mui-control-item mui-active">金融行业</a>
+                <a href="#m2" class="mui-control-item ">咨询行业</a>
+                <a href="#m3" class="mui-control-item">快测行业</a>
+                <a href="#m4" class="mui-control-item">会计行业</a>
+                <a href="#m5" class="mui-control-item ">互联网行业</a>
+                <a href="#m6" class="mui-control-item">广告行业</a>
+                <a href="#m6" class="mui-control-item">房地产行业</a>
+            </div>
+        </div>
+    </div>
+    <!--下拉刷新容器-->
+    <div id="refreshContainer" class="mui-content mui-scroll-wrapper">
+        <div class="mui-scroll">
+            <!--数据列表-->
+            <ul class="mui-table-view mui-table-view-chevron ">
+                <div class="cover" style="padding: 20px;">
+                    <div class="cover-item">
+                        <div class="image">
+                            <img class="img" src="https://timgsa.baidu.com/timg?image&quality=80&size=b9999_10000&sec=1556733432157&di=1b49ca8afb8c3bab5b0818bec3eaa949&imgtype=0&src=http%3A%2F%2Fs12.sinaimg.cn%2Fmw690%2F001okAbYzy7swVjjIrVeb%26690">
+                            <img class="play" src="../images/play-small-new_1daa417.png">
+                        </div>
+                        <div class="details left">
+                            <div class="title">推荐算法应用基础讲解</div>
+                            <div class="teacher">导师：XX公司资深高级数据科学家Haven</div>
+                            <div class="info">以下是这些视频的一些详细介绍，可能内容会比较长，但是我们可以做</div>
+                        </div>
+                        <div class="right">
+                            <div class="numbers"><a class="mui-icon mui-icon-person"></a>10000人看过</div>
+                            <div class="button">免费试看</div>
+                        </div>
+                    </div>
+                    <div class="cover-item">
+                        <div class="image">
+                            <img class="img" src="https://timgsa.baidu.com/timg?image&quality=80&size=b9999_10000&sec=1556733432157&di=1b49ca8afb8c3bab5b0818bec3eaa949&imgtype=0&src=http%3A%2F%2Fs12.sinaimg.cn%2Fmw690%2F001okAbYzy7swVjjIrVeb%26690">
+                            <img class="play" src="../images/play-small-new_1daa417.png">
+                        </div>
+                        <div class="details left">
+                            <div class="title">推荐算法应用基础讲解</div>
+                            <div class="teacher">导师：XX公司资深高级数据科学家Haven</div>
+                            <div class="info">以下是这些视频的一些详细介绍，可能内容会比较长，但是我们可以做</div>
+                        </div>
+                        <div class="right">
+                            <div class="numbers"><a class="mui-icon mui-icon-person"></a>10000人看过</div>
+                            <div class="button">免费试看</div>
+                        </div>
+                    </div>
+                    <div class="cover-item">
+                        <div class="image">
+                            <img class="img" src="https://timgsa.baidu.com/timg?image&quality=80&size=b9999_10000&sec=1556733432157&di=1b49ca8afb8c3bab5b0818bec3eaa949&imgtype=0&src=http%3A%2F%2Fs12.sinaimg.cn%2Fmw690%2F001okAbYzy7swVjjIrVeb%26690">
+                            <img class="play" src="../images/play-small-new_1daa417.png">
+                        </div>
+                        <div class="details left">
+                            <div class="title">推荐算法应用基础讲解</div>
+                            <div class="teacher">导师：XX公司资深高级数据科学家Haven</div>
+                            <div class="info">以下是这些视频的一些详细介绍，可能内容会比较长，但是我们可以做</div>
+                        </div>
+                        <div class="right">
+                            <div class="numbers"><a class="mui-icon mui-icon-person"></a>10000人看过</div>
+                            <div class="button">免费试看</div>
+                        </div>
+                    </div>
+                </div>
+            </ul>
+        </div>
+    </div>
+</div>
+</body>
+<script type="text/javascript">
+    mui.init({
+        pullRefresh : {
+            container:"#refreshContainer",//下拉刷新容器标识，querySelector能定位的css选择器均可，比如：id、.class等
+            down : {
+                height:50,//可选,默认50.触发下拉刷新拖动距离,
+                auto: false,//可选,默认false.首次加载自动下拉刷新一次
+                contentdown : "下拉可以刷新",//可选，在下拉可刷新状态时，下拉刷新控件上显示的标题内容
+                contentover : "释放立即刷新",//可选，在释放可刷新状态时，下拉刷新控件上显示的标题内容
+                contentrefresh : "正在刷新...",//可选，正在刷新状态时，下拉刷新控件上显示的标题内容
+                callback : function () {
+
+                } //必选，刷新函数，根据具体业务来编写，比如通过ajax从服务器获取新数据；
+            }
+        }
+    });
+</script>
+</html>
