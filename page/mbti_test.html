@@ -17,6 +17,8 @@
     <link rel="stylesheet" href="../css/mui.min.css"/>
     <script type="text/javascript" src="../js/mui.min.js"></script>
 
+    <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+
     <style type="text/css">
         body{
             color: #333333 !important;
@@ -69,108 +71,17 @@
     <h1 class="mui-title" style="color: #fff;">MBTI测试</h1>
     <a class="mui-action-back mui-icon mui-icon-bars mui-pull-right" style="color: #fff"></a>
 </header>
-
-<div class="content" >
+<form id="form">
+<div class="content" id="app">
     <ul>
-        <li>
-            <div class="title">1.你偏好_____________?</div>
+        <li v-for="item in questions">
+            <div class="title">{{item.title}}</div>
             <div class="options">
                 <ul>
-                    <li>
+                    <li v-for="oItem in item.options">
                         <label class="sq-radio">
-                            A.事先知道约会的行程，要去哪里、有谁参加、你会在那里多久、该如何打扮
-                            <input type="radio" name="q1">
-                            <i></i>
-                        </label>
-                    </li>
-                    <li>
-                        <label class="sq-radio">
-                            B.让约会自然地去发生，不做太多的事先的计划
-                            <input type="radio" name="q1">
-                            <i></i>
-                        </label>
-                    </li>
-                </ul>
-            </div>
-        </li>
-        <li>
-            <div class="title">2.你喜欢_____________?</div>
-            <div class="options">
-                <ul>
-                    <li>
-                        <label class="sq-radio">
-                            A.有部署、有节奏的工作
-                            <input type="radio" name="q2">
-                            <i></i>
-                        </label>
-                    </li>
-                    <li>
-                        <label class="sq-radio">
-                            B.有灵活性、较为松散的工作
-                            <input type="radio" name="q2">
-                            <i></i>
-                        </label>
-                    </li>
-                </ul>
-            </div>
-        </li>
-        <li>
-            <div class="title">3.你乐于拥有广泛的人际圈?</div>
-            <div class="options">
-                <ul>
-                    <li>
-                        <label class="sq-radio">
-                            A.是的
-                            <input type="radio" name="q3">
-                            <i></i>
-                        </label>
-                    </li>
-                    <li>
-                        <label class="sq-radio">
-                            B.如果可以选择的话，我更愿意一个人静静呆着
-                            <input type="radio" name="q3">
-                            <i></i>
-                        </label>
-                    </li>
-                </ul>
-            </div>
-        </li>
-        <li>
-            <div class="title">4.你看肥皂剧的时候会很投入?</div>
-            <div class="options">
-                <ul>
-                    <li>
-                        <label class="sq-radio">
-                            A.是的
-                            <input type="radio" name="q4">
-                            <i></i>
-                        </label>
-                    </li>
-                    <li>
-                        <label class="sq-radio">
-                            B.不会
-                            <input type="radio" name="q4">
-                            <i></i>
-                        </label>
-                    </li>
-                </ul>
-            </div>
-        </li>
-        <li>
-            <div class="title">5.电话铃声突然响起或类似这样的突发性事件，你习惯最先做出回应?</div>
-            <div class="options">
-                <ul>
-                    <li>
-                        <label class="sq-radio">
-                            A.是的
-                            <input type="radio" name="q5">
-                            <i></i>
-                        </label>
-                    </li>
-                    <li>
-                        <label class="sq-radio">
-                            B.不会
-                            <input type="radio" name="q5">
+                            {{oItem}}
+                            <input type="radio" :name="item.id">
                             <i></i>
                         </label>
                     </li>
@@ -178,10 +89,161 @@
             </div>
         </li>
     </ul>
+        <!--<li>-->
+            <!--<div class="title">1.你偏好_____________?</div>-->
+            <!--<div class="options">-->
+                <!--<ul>-->
+                    <!--<li>-->
+                        <!--<label class="sq-radio">-->
+                            <!--A.事先知道约会的行程，要去哪里、有谁参加、你会在那里多久、该如何打扮-->
+                            <!--<input type="radio" name="q1">-->
+                            <!--<i></i>-->
+                        <!--</label>-->
+                    <!--</li>-->
+                    <!--<li>-->
+                        <!--<label class="sq-radio">-->
+                            <!--B.让约会自然地去发生，不做太多的事先的计划-->
+                            <!--<input type="radio" name="q1">-->
+                            <!--<i></i>-->
+                        <!--</label>-->
+                    <!--</li>-->
+                <!--</ul>-->
+            <!--</div>-->
+        <!--</li>-->
+        <!--<li>-->
+            <!--<div class="title">2.你喜欢_____________?</div>-->
+            <!--<div class="options">-->
+                <!--<ul>-->
+                    <!--<li>-->
+                        <!--<label class="sq-radio">-->
+                            <!--A.有部署、有节奏的工作-->
+                            <!--<input type="radio" name="q2">-->
+                            <!--<i></i>-->
+                        <!--</label>-->
+                    <!--</li>-->
+                    <!--<li>-->
+                        <!--<label class="sq-radio">-->
+                            <!--B.有灵活性、较为松散的工作-->
+                            <!--<input type="radio" name="q2">-->
+                            <!--<i></i>-->
+                        <!--</label>-->
+                    <!--</li>-->
+                <!--</ul>-->
+            <!--</div>-->
+        <!--</li>-->
+        <!--<li>-->
+            <!--<div class="title">3.你乐于拥有广泛的人际圈?</div>-->
+            <!--<div class="options">-->
+                <!--<ul>-->
+                    <!--<li>-->
+                        <!--<label class="sq-radio">-->
+                            <!--A.是的-->
+                            <!--<input type="radio" name="q3">-->
+                            <!--<i></i>-->
+                        <!--</label>-->
+                    <!--</li>-->
+                    <!--<li>-->
+                        <!--<label class="sq-radio">-->
+                            <!--B.如果可以选择的话，我更愿意一个人静静呆着-->
+                            <!--<input type="radio" name="q3">-->
+                            <!--<i></i>-->
+                        <!--</label>-->
+                    <!--</li>-->
+                <!--</ul>-->
+            <!--</div>-->
+        <!--</li>-->
+        <!--<li>-->
+            <!--<div class="title">4.你看肥皂剧的时候会很投入?</div>-->
+            <!--<div class="options">-->
+                <!--<ul>-->
+                    <!--<li>-->
+                        <!--<label class="sq-radio">-->
+                            <!--A.是的-->
+                            <!--<input type="radio" name="q4">-->
+                            <!--<i></i>-->
+                        <!--</label>-->
+                    <!--</li>-->
+                    <!--<li>-->
+                        <!--<label class="sq-radio">-->
+                            <!--B.不会-->
+                            <!--<input type="radio" name="q4">-->
+                            <!--<i></i>-->
+                        <!--</label>-->
+                    <!--</li>-->
+                <!--</ul>-->
+            <!--</div>-->
+        <!--</li>-->
+        <!--<li>-->
+            <!--<div class="title">5.电话铃声突然响起或类似这样的突发性事件，你习惯最先做出回应?</div>-->
+            <!--<div class="options">-->
+                <!--<ul>-->
+                    <!--<li>-->
+                        <!--<label class="sq-radio">-->
+                            <!--A.是的-->
+                            <!--<input type="radio" name="q5">-->
+                            <!--<i></i>-->
+                        <!--</label>-->
+                    <!--</li>-->
+                    <!--<li>-->
+                        <!--<label class="sq-radio">-->
+                            <!--B.不会-->
+                            <!--<input type="radio" name="q5">-->
+                            <!--<i></i>-->
+                        <!--</label>-->
+                    <!--</li>-->
+                <!--</ul>-->
+            <!--</div>-->
+        <!--</li>-->
+
 
     <div style="width: 70%;margin-top: 50px;margin-left: auto;margin-right: auto;">
-        <button class="sq-button">下一页</button>
+        <button class="sq-button" type="button" v-on:click="next">下一页</button>
     </div>
 </div>
+</form>
 </body>
+<script type="text/javascript">
+    var app = new Vue({
+        el:'#app',
+        data: function () {
+            return {
+                questions:[]
+            }
+        },
+        mounted: function () {
+            this.getQuestions();
+        },
+        methods:{
+            getQuestions: function(){
+                var that = this;
+                setTimeout(function () {
+                    that.questions = [
+                        {id:1, title:'1.你偏好_____________?',
+                            options:['A.事先知道约会的行程，要去哪里、有谁参加、你会在那里多久、该如何打扮', 'B.让约会自然地去发生，不做太多的事先的计划']
+                        },
+                        {id:2, title:'2.你喜欢_____________?',
+                            options:['A.有部署、有节奏的工作', 'B.有灵活性、较为松散的工作']
+                        },
+                        {id:3, title:'3.你乐于拥有广泛的人际圈?',
+                            options:['A.是的', 'B.如果可以选择的话，我更愿意一个人静静呆着']
+                        },
+                        {id:4, title:'4.你看肥皂剧的时候会很投入?',
+                            options:['A.是的', 'B.不会']
+                        },
+                        {id:5, title:'5.电话铃声突然响起或类似这样的突发性事件，你习惯最先做出回应?',
+                            options:['A.是的', 'B.不会']
+                        },
+                    ];
+                }, 1000);
+            },
+            next: function (event) {
+                console.log(event);
+                if(event){
+                    alert(event.target.textContent);
+                    event.target.textContent = '提交测试'
+                }
+            }
+        }
+    });
+</script>
 </html>

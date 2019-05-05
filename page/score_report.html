@@ -17,6 +17,8 @@
     <link rel="stylesheet" href="../css/mui.min.css"/>
     <script type="text/javascript" src="../js/mui.min.js"></script>
 
+    <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+
     <style type="text/css">
         body{
             color: #333333 !important;
@@ -99,7 +101,7 @@
     <a class="mui-action-back mui-icon mui-icon-bars mui-pull-right" style="color: #fff"></a>
 </header>
 
-<div class="content">
+<div class="content" id="app">
     <div id="analyze" class="panel">
         <div>
             <div class="panel-title">考试整体分析
@@ -108,9 +110,9 @@
         </div>
         <div class="panel-content">
             <ul>
-                <li><span class="model">ISTJ</span>型人格</li>
-                <li class="L2">关键词：<span>严肃</span><span>务实</span><span>逻辑</span></li>
-                <li>整体分析: 1.严肃、安静、籍由集中心志与全力投入,及可被信赖快致成功: 2.行事务实，有序、实际，建辑、真实及可信赖: 3.+分国童且乐于任何事(工作、因家、生活均有良好组织及有序):4.负责任: 5.照设定成效来作出决策目不要阻挠与闲言会坚定为‘之: 6.重视传统与忠诚: 7.传统性的思考者或经理。</li>
+                <li><span class="model">{{data.model}}</span>型人格</li>
+                <li class="L2">关键词：<span v-for="item in data.keywords">{{item}}</span></li>
+                <li>整体分析: {{data.text}}</li>
             </ul>
         </div>
     </div>
@@ -122,7 +124,8 @@
             </div>
         </div>
         <div class="panel-content">
-            <img style="width: 100%;height: auto" src="https://ss3.bdstatic.com/70cFv8Sh_Q1YnxGkpoWK1HF6hhy/it/u=1967947286,3442057709&fm=26&gp=0.jpg">
+            <img style="width: 100%;height: auto" :src="data.chart.img">
+            <div style="height: auto;margin: 10px auto;font-size: 10px;text-align: center" :src="data.chart">{{data.chart.text}}</div>
         </div>
     </div>
 
@@ -133,13 +136,37 @@
             </div>
         </div>
         <div class="panel-content">
-            你品行优良，待人试思，表理-数。宽厚仁道，不激进，与人争锋，同学乐意亲近。本学期最突出的成果是学习逐步走向正轨，退渐掌握了高中课程的学习方法。你现在一定要树立信心,没有意不过的高山，没有越不过的大海，只要陶怀坚定，坚强果败，乘风破浪会有时。你性格活泼开朗，能说能干，为人大方。宽厚仁道，不激进，不与人争锋，同学乐意亲近。成绩有所回开，但远没有达到你的潜质。不用去想能攀多高，即使路途遥远，只要一步一个脚印，目标始终如一,你的理想一定能实现。
+            {{ data.offer }}
         </div>
     </div>
 
 </div>
 </body>
 <script type="text/javascript">
-
+    var app = new Vue({
+        el: '#app',
+        data: function () {
+            return {
+                data:{}
+            }
+        },
+        mounted:  function () {
+            this.getData();
+        },
+        methods: {
+            getData: function () {
+                var that = this;
+                setTimeout(function () {
+                    that.data ={
+                        model: 'ISTJ',
+                        keywords: ['严肃','务实','逻辑'],
+                        text: '1.严肃、安静、籍由集中心志与全力投入,及可被信赖快致成功: 2.行事务实，有序、实际，建辑、真实及可信赖: 3.+分国童且乐于任何事(工作、因家、生活均有良好组织及有序):4.负责任: 5.照设定成效来作出决策目不要阻挠与闲言会坚定为‘之: 6.重视传统与忠诚: 7.传统性的思考者或经理。',
+                        chart: {img:'https://ss3.bdstatic.com/70cFv8Sh_Q1YnxGkpoWK1HF6hhy/it/u=1967947286,3442057709&fm=26&gp=0.jpg',text:'你可以的！'},
+                        offer:'你品行优良，待人试思，表理-数。宽厚仁道，不激进，与人争锋，同学乐意亲近。本学期最突出的成果是学习逐步走向正轨，退渐掌握了高中课程的学习方法。你现在一定要树立信心,没有意不过的高山，没有越不过的大海，只要陶怀坚定，坚强果败，乘风破浪会有时。你性格活泼开朗，能说能干，为人大方。宽厚仁道，不激进，不与人争锋，同学乐意亲近。成绩有所回开，但远没有达到你的潜质。不用去想能攀多高，即使路途遥远，只要一步一个脚印，目标始终如一,你的理想一定能实现。'
+                    }
+                }, 1000);
+            }
+        }
+    });
 </script>
 </html>

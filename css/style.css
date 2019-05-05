@@ -272,7 +272,10 @@ body{
     background-color: #8f8f94;
     color: white;
 }
-.sq-tabbar>div:hover > a,span{
+.sq-tabbar>div:hover a{
+    color: white;
+}
+.sq-tabbar>div:hover span{
     color: white;
 }
 .sq-tabbar>div>a{
@@ -282,6 +285,9 @@ body{
 .sq-tabbar>div>span{
     color: #8f8f94;
 }
-.sq-tabbar .active a,span{
+.sq-tabbar .active span{
+    color: #67b8bf;
+}
+.sq-tabbar .active a{
     color: #67b8bf;
 }

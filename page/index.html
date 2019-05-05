@@ -16,6 +16,7 @@
     <link rel="stylesheet" href="../fonts/mui.ttf"/>
     <link rel="stylesheet" href="../css/mui.min.css"/>
     <script type="text/javascript" src="../js/mui.min.js"></script>
+
     <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
     <style type="text/css">
         body{
@@ -75,9 +76,12 @@
             display: block;
             text-align: center;
             font-size: 11px;
-            color: #333333;
+            color: #333333 !important;
             padding: 0;
             margin: 0;
+        }
+        #teacher .panel-content>div{
+            margin-top: 10px;
         }
 
         /*coursequan全部课程*/
@@ -139,9 +143,10 @@
         </div>
         <div class="panel-content">
             <ul>
-                <li>Marking Analytics 专业，理工科和商科的完美结合</li>
-                <li>想学BA？Business Analytics和Business Analytics分满了吗?</li>
-                <li>面试专题|What`s your Weakness?</li>
+                <li v-for="item in news">{{item.text}}</li>
+                <!--<li>Marking Analytics 专业，理工科和商科的完美结合</li>-->
+                <!--<li>想学BA？Business Analytics和Business Analytics分满了吗?</li>-->
+                <!--<li>面试专题|What`s your Weakness?</li>-->
             </ul>
         </div>
     </div>
@@ -154,45 +159,57 @@
             </div>
         </div>
         <div class="panel-content">
-            <div class="mui-row">
-                <div class="mui-col-sm-3 mui-col-xs-6 list-item">
-                    <img src="https://timgsa.baidu.com/timg?image&quality=80&size=b9999_10000&sec=1556718275056&di=7c9f2516ce0f341cb28291d46ab129f7&imgtype=0&src=http%3A%2F%2Fimage-258.258.com%2F258com%2F20171111%2Fdd6b7f47fa6e430b5440121fa75e491a.jpg">
-                    <div class="name">Sophia</div>
-                </div>
-                <div class="mui-col-sm-3 mui-col-xs-6 list-item">
-                    <img src="https://timgsa.baidu.com/timg?image&quality=80&size=b9999_10000&sec=1556718275056&di=7c9f2516ce0f341cb28291d46ab129f7&imgtype=0&src=http%3A%2F%2Fimage-258.258.com%2F258com%2F20171111%2Fdd6b7f47fa6e430b5440121fa75e491a.jpg">
-                    <div class="name">Sophia</div>
-                </div>
-                <div class="mui-col-sm-3 mui-col-xs-6 list-item">
-                    <img src="https://timgsa.baidu.com/timg?image&quality=80&size=b9999_10000&sec=1556718275056&di=7c9f2516ce0f341cb28291d46ab129f7&imgtype=0&src=http%3A%2F%2Fimage-258.258.com%2F258com%2F20171111%2Fdd6b7f47fa6e430b5440121fa75e491a.jpg">
-                    <div class="name">Sophia</div>
-                </div>
-                <div class="mui-col-sm-3 mui-col-xs-6 list-item">
-                    <img src="https://timgsa.baidu.com/timg?image&quality=80&size=b9999_10000&sec=1556718275056&di=7c9f2516ce0f341cb28291d46ab129f7&imgtype=0&src=http%3A%2F%2Fimage-258.258.com%2F258com%2F20171111%2Fdd6b7f47fa6e430b5440121fa75e491a.jpg">
-                    <div class="name">Sophia</div>
-                </div>
-            </div>
-            <div class="jobtitle divider"><span>职业规划师</span></div>
 
-            <div class="mui-row" style="margin-top: 15px">
-                <div class="mui-col-sm-3 mui-col-xs-6 list-item">
-                    <img src="https://timgsa.baidu.com/timg?image&quality=80&size=b9999_10000&sec=1556718275056&di=7c9f2516ce0f341cb28291d46ab129f7&imgtype=0&src=http%3A%2F%2Fimage-258.258.com%2F258com%2F20171111%2Fdd6b7f47fa6e430b5440121fa75e491a.jpg">
-                    <div class="name">Sophia</div>
+            <div v-for="item in teachers">
+                <div class="mui-row">
+                    <div class="mui-col-sm-3 mui-col-xs-6 list-item" v-for="tItem in item.list">
+                        <img :src="tItem.img" >
+                        <div class="name">{{tItem.name}}</div>
+                    </div>
                 </div>
-                <div class="mui-col-sm-3 mui-col-xs-6 list-item">
-                    <img src="https://timgsa.baidu.com/timg?image&quality=80&size=b9999_10000&sec=1556718275056&di=7c9f2516ce0f341cb28291d46ab129f7&imgtype=0&src=http%3A%2F%2Fimage-258.258.com%2F258com%2F20171111%2Fdd6b7f47fa6e430b5440121fa75e491a.jpg">
-                    <div class="name">Sophia</div>
-                </div>
-                <div class="mui-col-sm-3 mui-col-xs-6 list-item">
-                    <img src="https://timgsa.baidu.com/timg?image&quality=80&size=b9999_10000&sec=1556718275056&di=7c9f2516ce0f341cb28291d46ab129f7&imgtype=0&src=http%3A%2F%2Fimage-258.258.com%2F258com%2F20171111%2Fdd6b7f47fa6e430b5440121fa75e491a.jpg">
-                    <div class="name">Sophia</div>
-                </div>
-                <div class="mui-col-sm-3 mui-col-xs-6 list-item">
-                    <img src="https://timgsa.baidu.com/timg?image&quality=80&size=b9999_10000&sec=1556718275056&di=7c9f2516ce0f341cb28291d46ab129f7&imgtype=0&src=http%3A%2F%2Fimage-258.258.com%2F258com%2F20171111%2Fdd6b7f47fa6e430b5440121fa75e491a.jpg">
-                    <div class="name">Sophia</div>
-                </div>
+                <div class="jobtitle divider"><span>{{item.text}}</span></div>
             </div>
-            <div class="jobtitle divider"><span>资讯行业导师</span></div>
+
+
+            <!--<div class="mui-row">-->
+                <!--<div class="mui-col-sm-3 mui-col-xs-6 list-item">-->
+                    <!--<img src="https://timgsa.baidu.com/timg?image&quality=80&size=b9999_10000&sec=1556718275056&di=7c9f2516ce0f341cb28291d46ab129f7&imgtype=0&src=http%3A%2F%2Fimage-258.258.com%2F258com%2F20171111%2Fdd6b7f47fa6e430b5440121fa75e491a.jpg">-->
+                    <!--<div class="name">Sophia</div>-->
+                <!--</div>-->
+                <!--<div class="mui-col-sm-3 mui-col-xs-6 list-item">-->
+                    <!--<img src="https://timgsa.baidu.com/timg?image&quality=80&size=b9999_10000&sec=1556718275056&di=7c9f2516ce0f341cb28291d46ab129f7&imgtype=0&src=http%3A%2F%2Fimage-258.258.com%2F258com%2F20171111%2Fdd6b7f47fa6e430b5440121fa75e491a.jpg">-->
+                    <!--<div class="name">Sophia</div>-->
+                <!--</div>-->
+                <!--<div class="mui-col-sm-3 mui-col-xs-6 list-item">-->
+                    <!--<img src="https://timgsa.baidu.com/timg?image&quality=80&size=b9999_10000&sec=1556718275056&di=7c9f2516ce0f341cb28291d46ab129f7&imgtype=0&src=http%3A%2F%2Fimage-258.258.com%2F258com%2F20171111%2Fdd6b7f47fa6e430b5440121fa75e491a.jpg">-->
+                    <!--<div class="name">Sophia</div>-->
+                <!--</div>-->
+                <!--<div class="mui-col-sm-3 mui-col-xs-6 list-item">-->
+                    <!--<img src="https://timgsa.baidu.com/timg?image&quality=80&size=b9999_10000&sec=1556718275056&di=7c9f2516ce0f341cb28291d46ab129f7&imgtype=0&src=http%3A%2F%2Fimage-258.258.com%2F258com%2F20171111%2Fdd6b7f47fa6e430b5440121fa75e491a.jpg">-->
+                    <!--<div class="name">Sophia</div>-->
+                <!--</div>-->
+            <!--</div>-->
+            <!--<div class="jobtitle divider"><span>职业规划师</span></div>-->
+
+            <!--<div class="mui-row">-->
+                <!--<div class="mui-col-sm-3 mui-col-xs-6 list-item">-->
+                    <!--<img src="https://timgsa.baidu.com/timg?image&quality=80&size=b9999_10000&sec=1556718275056&di=7c9f2516ce0f341cb28291d46ab129f7&imgtype=0&src=http%3A%2F%2Fimage-258.258.com%2F258com%2F20171111%2Fdd6b7f47fa6e430b5440121fa75e491a.jpg">-->
+                    <!--<div class="name">Sophia</div>-->
+                <!--</div>-->
+                <!--<div class="mui-col-sm-3 mui-col-xs-6 list-item">-->
+                    <!--<img src="https://timgsa.baidu.com/timg?image&quality=80&size=b9999_10000&sec=1556718275056&di=7c9f2516ce0f341cb28291d46ab129f7&imgtype=0&src=http%3A%2F%2Fimage-258.258.com%2F258com%2F20171111%2Fdd6b7f47fa6e430b5440121fa75e491a.jpg">-->
+                    <!--<div class="name">Sophia</div>-->
+                <!--</div>-->
+                <!--<div class="mui-col-sm-3 mui-col-xs-6 list-item">-->
+                    <!--<img src="https://timgsa.baidu.com/timg?image&quality=80&size=b9999_10000&sec=1556718275056&di=7c9f2516ce0f341cb28291d46ab129f7&imgtype=0&src=http%3A%2F%2Fimage-258.258.com%2F258com%2F20171111%2Fdd6b7f47fa6e430b5440121fa75e491a.jpg">-->
+                    <!--<div class="name">Sophia</div>-->
+                <!--</div>-->
+                <!--<div class="mui-col-sm-3 mui-col-xs-6 list-item">-->
+                    <!--<img src="https://timgsa.baidu.com/timg?image&quality=80&size=b9999_10000&sec=1556718275056&di=7c9f2516ce0f341cb28291d46ab129f7&imgtype=0&src=http%3A%2F%2Fimage-258.258.com%2F258com%2F20171111%2Fdd6b7f47fa6e430b5440121fa75e491a.jpg">-->
+                    <!--<div class="name">Sophia</div>-->
+                <!--</div>-->
+            <!--</div>-->
+            <!--<div class="jobtitle divider"><span>资讯行业导师</span></div>-->
         </div>
     </div>
 
@@ -205,67 +222,84 @@
             </div>
         </div>
         <div class="panel-content">
+
             <div class="mui-row">
-                <div class="mui-col-sm-6 mui-col-xs-12 cover-item">
+                <div class="mui-col-sm-6 mui-col-xs-12 cover-item" v-for="item in allClass">
                     <div class="image">
-                        <img class="img" src="https://timgsa.baidu.com/timg?image&quality=80&size=b9999_10000&sec=1556733432157&di=1b49ca8afb8c3bab5b0818bec3eaa949&imgtype=0&src=http%3A%2F%2Fs12.sinaimg.cn%2Fmw690%2F001okAbYzy7swVjjIrVeb%26690">
+                        <img class="img" :src="item.img"/>
                         <img class="play" src="../images/play-small-new_1daa417.png">
                     </div>
                     <div class="details left">
-                        <div class="title">推荐算法应用基础讲解</div>
-                        <div class="teacher">导师：XX公司资深高级数据科学家Haven</div>
-                        <div class="info">以下是这些视频的一些详细介绍，可能内容会比较长，但是我们可以做</div>
+                        <div class="title">{{item.title}}</div>
+                        <div class="teacher">{{item.teacher}}</div>
+                        <div class="info">{{item.info}}</div>
                     </div>
                     <div class="right">
-                        <div class="numbers"><a class="mui-icon mui-icon-person"></a>10000人看过</div>
+                        <div class="numbers"><a class="mui-icon mui-icon-person"></a>{{item.viewnum}}人看过</div>
                         <div class="button">免费试看</div>
                     </div>
                 </div>
-                <div class="mui-col-sm-6 mui-col-xs-12 cover-item">
-                    <div class="image">
-                        <img class="img" src="https://timgsa.baidu.com/timg?image&quality=80&size=b9999_10000&sec=1556733432157&di=1b49ca8afb8c3bab5b0818bec3eaa949&imgtype=0&src=http%3A%2F%2Fs12.sinaimg.cn%2Fmw690%2F001okAbYzy7swVjjIrVeb%26690">
-                        <img class="play" src="../images/play-small-new_1daa417.png">
-                    </div>
-                    <div class="details left">
-                        <div class="title">推荐算法应用基础讲解</div>
-                        <div class="teacher">导师：XX公司资深高级数据科学家Haven</div>
-                        <div class="info">以下是这些视频的一些详细介绍，可能内容会比较长，但是我们可以做</div>
-                    </div>
-                    <div class="right">
-                        <div class="numbers"><a class="mui-icon mui-icon-person"></a>10000人看过</div>
-                        <div class="button">免费试看</div>
-                    </div>
-                </div>
-                <div class="mui-col-sm-6 mui-col-xs-12 cover-item">
-                    <div class="image">
-                        <img class="img" src="https://timgsa.baidu.com/timg?image&quality=80&size=b9999_10000&sec=1556733432157&di=1b49ca8afb8c3bab5b0818bec3eaa949&imgtype=0&src=http%3A%2F%2Fs12.sinaimg.cn%2Fmw690%2F001okAbYzy7swVjjIrVeb%26690">
-                        <img class="play" src="../images/play-small-new_1daa417.png">
-                    </div>
-                    <div class="details left">
-                        <div class="title">推荐算法应用基础讲解</div>
-                        <div class="teacher">导师：XX公司资深高级数据科学家Haven</div>
-                        <div class="info">以下是这些视频的一些详细介绍，可能内容会比较长，但是我们可以做</div>
-                    </div>
-                    <div class="right">
-                        <div class="numbers"><a class="mui-icon mui-icon-person"></a>10000人看过</div>
-                        <div class="button">免费试看</div>
-                    </div>
-                </div>
-                <div class="mui-col-sm-6 mui-col-xs-12 cover-item">
-                    <div class="image">
-                        <img class="img" src="https://timgsa.baidu.com/timg?image&quality=80&size=b9999_10000&sec=1556733432157&di=1b49ca8afb8c3bab5b0818bec3eaa949&imgtype=0&src=http%3A%2F%2Fs12.sinaimg.cn%2Fmw690%2F001okAbYzy7swVjjIrVeb%26690">
-                        <img class="play" src="../images/play-small-new_1daa417.png">
-                    </div>
-                    <div class="details left">
-                        <div class="title">推荐算法应用基础讲解</div>
-                        <div class="teacher">导师：XX公司资深高级数据科学家Haven</div>
-                        <div class="info">以下是这些视频的一些详细介绍，可能内容会比较长，但是我们可以做</div>
-                    </div>
-                    <div class="right">
-                        <div class="numbers"><a class="mui-icon mui-icon-person"></a>10000人看过</div>
-                        <div class="button">免费试看</div>
-                    </div>
-                </div>
+
+                <!--<div class="mui-col-sm-6 mui-col-xs-12 cover-item">-->
+                    <!--<div class="image">-->
+                        <!--<img class="img" src="https://timgsa.baidu.com/timg?image&quality=80&size=b9999_10000&sec=1556733432157&di=1b49ca8afb8c3bab5b0818bec3eaa949&imgtype=0&src=http%3A%2F%2Fs12.sinaimg.cn%2Fmw690%2F001okAbYzy7swVjjIrVeb%26690">-->
+                        <!--<img class="play" src="../images/play-small-new_1daa417.png">-->
+                    <!--</div>-->
+                    <!--<div class="details left">-->
+                        <!--<div class="title">推荐算法应用基础讲解</div>-->
+                        <!--<div class="teacher">导师：XX公司资深高级数据科学家Haven</div>-->
+                        <!--<div class="info">以下是这些视频的一些详细介绍，可能内容会比较长，但是我们可以做</div>-->
+                    <!--</div>-->
+                    <!--<div class="right">-->
+                        <!--<div class="numbers"><a class="mui-icon mui-icon-person"></a>10000人看过</div>-->
+                        <!--<div class="button">免费试看</div>-->
+                    <!--</div>-->
+                <!--</div>-->
+                <!--<div class="mui-col-sm-6 mui-col-xs-12 cover-item">-->
+                    <!--<div class="image">-->
+                        <!--<img class="img" src="https://timgsa.baidu.com/timg?image&quality=80&size=b9999_10000&sec=1556733432157&di=1b49ca8afb8c3bab5b0818bec3eaa949&imgtype=0&src=http%3A%2F%2Fs12.sinaimg.cn%2Fmw690%2F001okAbYzy7swVjjIrVeb%26690">-->
+                        <!--<img class="play" src="../images/play-small-new_1daa417.png">-->
+                    <!--</div>-->
+                    <!--<div class="details left">-->
+                        <!--<div class="title">推荐算法应用基础讲解</div>-->
+                        <!--<div class="teacher">导师：XX公司资深高级数据科学家Haven</div>-->
+                        <!--<div class="info">以下是这些视频的一些详细介绍，可能内容会比较长，但是我们可以做</div>-->
+                    <!--</div>-->
+                    <!--<div class="right">-->
+                        <!--<div class="numbers"><a class="mui-icon mui-icon-person"></a>10000人看过</div>-->
+                        <!--<div class="button">免费试看</div>-->
+                    <!--</div>-->
+                <!--</div>-->
+                <!--<div class="mui-col-sm-6 mui-col-xs-12 cover-item">-->
+                    <!--<div class="image">-->
+                        <!--<img class="img" src="https://timgsa.baidu.com/timg?image&quality=80&size=b9999_10000&sec=1556733432157&di=1b49ca8afb8c3bab5b0818bec3eaa949&imgtype=0&src=http%3A%2F%2Fs12.sinaimg.cn%2Fmw690%2F001okAbYzy7swVjjIrVeb%26690">-->
+                        <!--<img class="play" src="../images/play-small-new_1daa417.png">-->
+                    <!--</div>-->
+                    <!--<div class="details left">-->
+                        <!--<div class="title">推荐算法应用基础讲解</div>-->
+                        <!--<div class="teacher">导师：XX公司资深高级数据科学家Haven</div>-->
+                        <!--<div class="info">以下是这些视频的一些详细介绍，可能内容会比较长，但是我们可以做</div>-->
+                    <!--</div>-->
+                    <!--<div class="right">-->
+                        <!--<div class="numbers"><a class="mui-icon mui-icon-person"></a>10000人看过</div>-->
+                        <!--<div class="button">免费试看</div>-->
+                    <!--</div>-->
+                <!--</div>-->
+                <!--<div class="mui-col-sm-6 mui-col-xs-12 cover-item">-->
+                    <!--<div class="image">-->
+                        <!--<img class="img" src="https://timgsa.baidu.com/timg?image&quality=80&size=b9999_10000&sec=1556733432157&di=1b49ca8afb8c3bab5b0818bec3eaa949&imgtype=0&src=http%3A%2F%2Fs12.sinaimg.cn%2Fmw690%2F001okAbYzy7swVjjIrVeb%26690">-->
+                        <!--<img class="play" src="../images/play-small-new_1daa417.png">-->
+                    <!--</div>-->
+                    <!--<div class="details left">-->
+                        <!--<div class="title">推荐算法应用基础讲解</div>-->
+                        <!--<div class="teacher">导师：XX公司资深高级数据科学家Haven</div>-->
+                        <!--<div class="info">以下是这些视频的一些详细介绍，可能内容会比较长，但是我们可以做</div>-->
+                    <!--</div>-->
+                    <!--<div class="right">-->
+                        <!--<div class="numbers"><a class="mui-icon mui-icon-person"></a>10000人看过</div>-->
+                        <!--<div class="button">免费试看</div>-->
+                    <!--</div>-->
+                <!--</div>-->
             </div>
         </div>
     </div>
@@ -277,42 +311,106 @@
         el: '#app',
         data: function () {
             return {
-                banners:[
-                ]
+                banners:[],
+                news:[],
+                teachers: [],
+                allClass:[]
             };
+        },
+        watch:{
+
         },
         computed:{
             indicator: function () {
                 return this.banners.length>0 ? this.banners.length-2:0;
             }
         },
+        updated: function(){
+            console.log("updated:");
+            window.initSlider();
+        },
         mounted: function(){
             // `this` 指向 vm 实例
-            console.log('a is: ' + this);
-            console.log(this);
+            console.log("mounted");
             this.getBanners();
         },
         methods: {
             getBanners: function () {
                 console.log("----getBanners");
-                console.log(this)
-                this.banners = [
-                    {img:'https://timgsa.baidu.com/timg?image&quality=80&size=b9999_10000&sec=1556728672947&di=07f9a147f406c298ac55274d1d3f6ea8&imgtype=0&src=http%3A%2F%2Fi0.hdslb.com%2Fbfs%2Farticle%2Feabd70df86412d516645f1b564475f9758ff0c0c.jpg'},
-                    {img:'https://timgsa.baidu.com/timg?image&quality=80&size=b9999_10000&sec=1556728640132&di=a2c7fa875b2ba1613b726f7d078cf808&imgtype=0&src=http%3A%2F%2Fattachments.gfan.com%2Fforum%2Fattachments2%2F201304%2F30%2F1800246wk88l4blu86dw7l.jpg'},
-                    {img:'https://timgsa.baidu.com/timg?image&quality=80&size=b9999_10000&sec=1556728657153&di=8b0c13622d2dce1316e334e6ad801edc&imgtype=0&src=http%3A%2F%2Fclubimg.club.vmall.com%2Fdata%2Fattachment%2Fforum%2F201811%2F21%2F093946ruyys1j4zybqxa94.jpg'},
-                    {img:'https://timgsa.baidu.com/timg?image&quality=80&size=b9999_10000&sec=1556728672947&di=07f9a147f406c298ac55274d1d3f6ea8&imgtype=0&src=http%3A%2F%2Fi0.hdslb.com%2Fbfs%2Farticle%2Feabd70df86412d516645f1b564475f9758ff0c0c.jpg'},
-                    {img:'https://timgsa.baidu.com/timg?image&quality=80&size=b9999_10000&sec=1556728640132&di=a2c7fa875b2ba1613b726f7d078cf808&imgtype=0&src=http%3A%2F%2Fattachments.gfan.com%2Fforum%2Fattachments2%2F201304%2F30%2F1800246wk88l4blu86dw7l.jpg'}
-                ];
-
+                console.log(this);
+                var that = this;
+                setTimeout(function () {
+                    that.banners = [
+                        {img:'https://timgsa.baidu.com/timg?image&quality=80&size=b9999_10000&sec=1556728672947&di=07f9a147f406c298ac55274d1d3f6ea8&imgtype=0&src=http%3A%2F%2Fi0.hdslb.com%2Fbfs%2Farticle%2Feabd70df86412d516645f1b564475f9758ff0c0c.jpg'},
+                        {img:'https://timgsa.baidu.com/timg?image&quality=80&size=b9999_10000&sec=1556728640132&di=a2c7fa875b2ba1613b726f7d078cf808&imgtype=0&src=http%3A%2F%2Fattachments.gfan.com%2Fforum%2Fattachments2%2F201304%2F30%2F1800246wk88l4blu86dw7l.jpg'},
+                        {img:'https://timgsa.baidu.com/timg?image&quality=80&size=b9999_10000&sec=1556728657153&di=8b0c13622d2dce1316e334e6ad801edc&imgtype=0&src=http%3A%2F%2Fclubimg.club.vmall.com%2Fdata%2Fattachment%2Fforum%2F201811%2F21%2F093946ruyys1j4zybqxa94.jpg'},
+                        {img:'https://timgsa.baidu.com/timg?image&quality=80&size=b9999_10000&sec=1556728672947&di=07f9a147f406c298ac55274d1d3f6ea8&imgtype=0&src=http%3A%2F%2Fi0.hdslb.com%2Fbfs%2Farticle%2Feabd70df86412d516645f1b564475f9758ff0c0c.jpg'},
+                        {img:'https://timgsa.baidu.com/timg?image&quality=80&size=b9999_10000&sec=1556728640132&di=a2c7fa875b2ba1613b726f7d078cf808&imgtype=0&src=http%3A%2F%2Fattachments.gfan.com%2Fforum%2Fattachments2%2F201304%2F30%2F1800246wk88l4blu86dw7l.jpg'}
+                    ];
+                    that.teachers = [
+                        {text:'职业规划师',list:[
+                                {name:'sophia',img:'https://timgsa.baidu.com/timg?image&quality=80&size=b9999_10000&sec=1556718275056&di=7c9f2516ce0f341cb28291d46ab129f7&imgtype=0&src=http%3A%2F%2Fimage-258.258.com%2F258com%2F20171111%2Fdd6b7f47fa6e430b5440121fa75e491a.jpg'},
+                                {name:'sophia',img:'https://timgsa.baidu.com/timg?image&quality=80&size=b9999_10000&sec=1556718275056&di=7c9f2516ce0f341cb28291d46ab129f7&imgtype=0&src=http%3A%2F%2Fimage-258.258.com%2F258com%2F20171111%2Fdd6b7f47fa6e430b5440121fa75e491a.jpg'},
+                                {name:'sophia',img:'https://timgsa.baidu.com/timg?image&quality=80&size=b9999_10000&sec=1556718275056&di=7c9f2516ce0f341cb28291d46ab129f7&imgtype=0&src=http%3A%2F%2Fimage-258.258.com%2F258com%2F20171111%2Fdd6b7f47fa6e430b5440121fa75e491a.jpg'},
+                                {name:'sophia',img:'https://timgsa.baidu.com/timg?image&quality=80&size=b9999_10000&sec=1556718275056&di=7c9f2516ce0f341cb28291d46ab129f7&imgtype=0&src=http%3A%2F%2Fimage-258.258.com%2F258com%2F20171111%2Fdd6b7f47fa6e430b5440121fa75e491a.jpg'},
+                            ]
+                        },
+                        {text:'资讯行业导师',list:[
+                                {name:'sophia',img:'https://timgsa.baidu.com/timg?image&quality=80&size=b9999_10000&sec=1556718275056&di=7c9f2516ce0f341cb28291d46ab129f7&imgtype=0&src=http%3A%2F%2Fimage-258.258.com%2F258com%2F20171111%2Fdd6b7f47fa6e430b5440121fa75e491a.jpg'},
+                                {name:'sophia',img:'https://timgsa.baidu.com/timg?image&quality=80&size=b9999_10000&sec=1556718275056&di=7c9f2516ce0f341cb28291d46ab129f7&imgtype=0&src=http%3A%2F%2Fimage-258.258.com%2F258com%2F20171111%2Fdd6b7f47fa6e430b5440121fa75e491a.jpg'},
+                                {name:'sophia',img:'https://timgsa.baidu.com/timg?image&quality=80&size=b9999_10000&sec=1556718275056&di=7c9f2516ce0f341cb28291d46ab129f7&imgtype=0&src=http%3A%2F%2Fimage-258.258.com%2F258com%2F20171111%2Fdd6b7f47fa6e430b5440121fa75e491a.jpg'},
+                                {name:'sophia',img:'https://timgsa.baidu.com/timg?image&quality=80&size=b9999_10000&sec=1556718275056&di=7c9f2516ce0f341cb28291d46ab129f7&imgtype=0&src=http%3A%2F%2Fimage-258.258.com%2F258com%2F20171111%2Fdd6b7f47fa6e430b5440121fa75e491a.jpg'},
+                            ]
+                        }
+                    ];
+                    that.news = [
+                        {id:1, text:'Marking Analytics 专业，理工科和商科的完美结合'},
+                        {id:2, text:'想学BA？Business Analytics和Business Analytics分满了吗?'},
+                        {id:3, text:'面试专题|What`s your Weakness?'},
+                    ];
+                    that.allClass = [
+                        {
+                            img:'https://timgsa.baidu.com/timg?image&quality=80&size=b9999_10000&sec=1556733432157&di=1b49ca8afb8c3bab5b0818bec3eaa949&imgtype=0&src=http%3A%2F%2Fs12.sinaimg.cn%2Fmw690%2F001okAbYzy7swVjjIrVeb%26690',
+                            title:'推荐算法应用基础讲解',
+                            teacher:'导师：XX公司资深高级数据科学家Haven',
+                            info:'以下是这些视频的一些详细介绍，可能内容会比较长，但是我们可以做',
+                            viewnum: 2000
+                        },
+                        {
+                            img:'https://timgsa.baidu.com/timg?image&quality=80&size=b9999_10000&sec=1556733432157&di=1b49ca8afb8c3bab5b0818bec3eaa949&imgtype=0&src=http%3A%2F%2Fs12.sinaimg.cn%2Fmw690%2F001okAbYzy7swVjjIrVeb%26690',
+                            title:'推荐算法应用基础讲解',
+                            teacher:'导师：XX公司资深高级数据科学家Haven',
+                            info:'以下是这些视频的一些详细介绍，可能内容会比较长，但是我们可以做',
+                            viewnum: 2002
+                        },
+                        {
+                            img:'https://timgsa.baidu.com/timg?image&quality=80&size=b9999_10000&sec=1556733432157&di=1b49ca8afb8c3bab5b0818bec3eaa949&imgtype=0&src=http%3A%2F%2Fs12.sinaimg.cn%2Fmw690%2F001okAbYzy7swVjjIrVeb%26690',
+                            title:'推荐算法应用基础讲解',
+                            teacher:'导师：XX公司资深高级数据科学家Haven',
+                            info:'以下是这些视频的一些详细介绍，可能内容会比较长，但是我们可以做',
+                            viewnum: 2003
+                        },
+                        {
+                            img:'https://timgsa.baidu.com/timg?image&quality=80&size=b9999_10000&sec=1556733432157&di=1b49ca8afb8c3bab5b0818bec3eaa949&imgtype=0&src=http%3A%2F%2Fs12.sinaimg.cn%2Fmw690%2F001okAbYzy7swVjjIrVeb%26690',
+                            title:'推荐算法应用基础讲解',
+                            teacher:'导师：XX公司资深高级数据科学家Haven',
+                            info:'以下是这些视频的一些详细介绍，可能内容会比较长，但是我们可以做',
+                            viewnum: 2004
+                        }
+                    ];
+                }, 500);
             }
         }
     })
 </script>
 <script type="text/javascript">
-    //获得slider插件对象
-    var gallery = mui('.mui-slider');
-    gallery.slider({
-        interval:3000//自动轮播周期，若为0则不自动播放，默认为0；
-    });
+    //初始化滑动banner
+    window.initSlider = function() {
+        //获得slider插件对象
+        var gallery = mui('.mui-slider');
+        gallery.slider({
+            interval:3000//自动轮播周期，若为0则不自动播放，默认为0；
+        });
+    }
 </script>
 </html>
